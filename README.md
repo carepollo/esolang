@@ -12,3 +12,8 @@ This is my own esoteric programming language made to learn about low level progr
 There is a few prerequisites:
 - Having GO version 1.18 already installed
 
+### References
+
+Here you can find the resources I have used to create this project
+- [Writting an interpreter in Go](https://www.amazon.com/Writing-Interpreter-Go-Thorsten-Ball/dp/3982016118)
+- [Writting a compiler in Go](https://www.amazon.com/Writing-Compiler-Go-Thorsten-Ball/dp/398201610X)

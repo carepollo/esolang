@@ -4,9 +4,9 @@ import "github.com/carepollo/sexlang/token"
 
 type Lexer struct {
 	input        string
-	position     int
-	readPosition int
-	ch           byte
+	position     int  // the position whithin the input, returns the cursor
+	readPosition int  // the element within the input that is next to the first character
+	ch           byte // cursor of which character is currently watching
 }
 
 func New(input string) *Lexer {
@@ -57,12 +57,16 @@ func (l *Lexer) NextToken() token.Token {
 			tok.Literal = l.readIdentifier()
 			tok.Type = token.LookupIdent(tok.Literal)
 			return tok
+		} else if isDigit(l.ch) {
+			tok.Type = token.INT
+			tok.Literal = l.readNumber()
+			return tok
 		} else {
 			tok = newToken(token.ILLEGAL, l.ch)
 		}
 	}
 
-	// l.readChar()
+	l.readChar()
 	return tok
 }
 
@@ -74,13 +78,22 @@ func (l *Lexer) readIdentifier() string {
 	return l.input[position:l.position]
 }
 
-// omit all whitespaces or blank characters
+func (l *Lexer) readNumber() string {
+	position := l.position
+	for isDigit(l.ch) {
+		l.readChar()
+	}
+	return l.input[position:l.position]
+}
+
+// omit all whitespaces or blank characters whithin the input
 func (l *Lexer) skipWhitespace() {
 	for l.ch == ' ' || l.ch == '\t' || l.ch == '\n' || l.ch == '\r' {
 		l.readChar()
 	}
 }
 
+// create token from given data
 func newToken(tokenType token.TokenType, ch byte) token.Token {
 	return token.Token{
 		Type:    tokenType,
@@ -88,6 +101,12 @@ func newToken(tokenType token.TokenType, ch byte) token.Token {
 	}
 }
 
+// check if character is a letter
 func isLetter(ch byte) bool {
 	return 'a' <= ch && ch <= 'z' || 'A' <= ch && ch <= 'Z' || ch == '_'
+}
+
+// check if character is an intener number
+func isDigit(ch byte) bool {
+	return '0' <= ch && ch <= '9'
 }
