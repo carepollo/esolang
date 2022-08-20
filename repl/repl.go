@@ -6,7 +6,7 @@ import (
 	"io"
 
 	"github.com/carepollo/sexlang/lexer"
-	"github.com/carepollo/sexlang/token"
+	"github.com/carepollo/sexlang/parser"
 )
 
 const PROMPT = ">> "
@@ -22,9 +22,22 @@ func Start(in io.Reader, out io.Writer) {
 		}
 		line := scanner.Text()
 		lexer := lexer.New(line)
+		parser := parser.New(lexer)
 
-		for tok := lexer.NextToken(); tok.Type != token.EOF; tok = lexer.NextToken() {
-			fmt.Printf("%+v\n", tok)
+		program := parser.ParseProgram()
+		if len(parser.Errors()) != 0 {
+			printParserErrors(out, parser.Errors())
+			continue
 		}
+
+		io.WriteString(out, program.String())
+		io.WriteString(out, "\n")
+	}
+}
+
+// helper to show internal record of errors
+func printParserErrors(out io.Writer, errors []string) {
+	for _, message := range errors {
+		io.WriteString(out, "\t"+message+"\n")
 	}
 }
