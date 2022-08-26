@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/carepollo/sexlang/evaluator"
 	"github.com/carepollo/sexlang/lexer"
 	"github.com/carepollo/sexlang/parser"
 )
@@ -30,13 +31,17 @@ func Start(in io.Reader, out io.Writer) {
 			continue
 		}
 
-		io.WriteString(out, program.String())
-		io.WriteString(out, "\n")
+		evaluated := evaluator.Eval(program)
+		if evaluated != nil {
+			io.WriteString(out, evaluated.Inspect())
+			io.WriteString(out, "\n")
+		}
 	}
 }
 
 // helper to show internal record of errors
 func printParserErrors(out io.Writer, errors []string) {
+	io.WriteString(out, "Error raised")
 	for _, message := range errors {
 		io.WriteString(out, "\t"+message+"\n")
 	}

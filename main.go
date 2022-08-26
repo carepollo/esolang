@@ -14,7 +14,7 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println("Initializing SEX programming language, user: ", user.Username)
+	fmt.Println("Initializing SEEEXXXXX programming language, user: ", user.Username)
 	fmt.Println("You may now start writting commands")
 	repl.Start(os.Stdin, os.Stdout)
 }
