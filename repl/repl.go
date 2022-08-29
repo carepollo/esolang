@@ -7,6 +7,7 @@ import (
 
 	"github.com/carepollo/sexlang/evaluator"
 	"github.com/carepollo/sexlang/lexer"
+	"github.com/carepollo/sexlang/object"
 	"github.com/carepollo/sexlang/parser"
 )
 
@@ -15,6 +16,7 @@ const PROMPT = ">> "
 // start the interpreter in interactive mode (read, eval, print, loop), basically console mode
 func Start(in io.Reader, out io.Writer) {
 	scanner := bufio.NewScanner(in)
+	env := object.NewEnvironment()
 	for {
 		fmt.Print(PROMPT)
 		scanned := scanner.Scan()
@@ -31,7 +33,7 @@ func Start(in io.Reader, out io.Writer) {
 			continue
 		}
 
-		evaluated := evaluator.Eval(program)
+		evaluated := evaluator.Eval(program, env)
 		if evaluated != nil {
 			io.WriteString(out, evaluated.Inspect())
 			io.WriteString(out, "\n")
