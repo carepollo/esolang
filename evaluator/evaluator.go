@@ -112,6 +112,7 @@ func evalProgram(program *ast.Program, env *object.Environment) object.Object {
 	return result
 }
 
+// create object when detected a block statent
 func evalBlockStatement(
 	block *ast.BlockStatement,
 	env *object.Environment,
@@ -132,6 +133,7 @@ func evalBlockStatement(
 	return result
 }
 
+// turn literal value into boolean
 func nativeBoolToBooleanObject(input bool) *object.Boolean {
 	if input {
 		return TRUE
@@ -139,6 +141,7 @@ func nativeBoolToBooleanObject(input bool) *object.Boolean {
 	return FALSE
 }
 
+// check if is there any prefix operator to add
 func evalPrefixExpression(operator string, right object.Object) object.Object {
 	switch operator {
 	case "!":
@@ -150,6 +153,7 @@ func evalPrefixExpression(operator string, right object.Object) object.Object {
 	}
 }
 
+// create object when there is middle operator
 func evalInfixExpression(
 	operator string,
 	left,
@@ -171,6 +175,7 @@ func evalInfixExpression(
 	}
 }
 
+// makel logic when there is inverse logic operator
 func evalBangOperatorExpression(right object.Object) object.Object {
 	switch right {
 	case TRUE:
@@ -184,6 +189,7 @@ func evalBangOperatorExpression(right object.Object) object.Object {
 	}
 }
 
+// check if operator is the supported
 func evalMinusPrefixOperatorExpression(right object.Object) object.Object {
 	if right.Type() != object.INTEGER_OBJ {
 		return newError("unknown operator: -%s", right.Type())
@@ -193,6 +199,7 @@ func evalMinusPrefixOperatorExpression(right object.Object) object.Object {
 	return &object.Integer{Value: -value}
 }
 
+// make operations according to its middle operator
 func evalIntegerInfixExpression(
 	operator string,
 	left,
@@ -224,6 +231,7 @@ func evalIntegerInfixExpression(
 	}
 }
 
+// create and evaluate params, block statement, etc from if statement
 func evalIfExpression(
 	ie *ast.IfExpression,
 	env *object.Environment,
@@ -242,6 +250,7 @@ func evalIfExpression(
 	}
 }
 
+// check for declaration of variables
 func evalIdentifier(
 	node *ast.Identifier,
 	env *object.Environment,
@@ -254,6 +263,7 @@ func evalIdentifier(
 	return val
 }
 
+// check if value is true
 func isTruthy(obj object.Object) bool {
 	switch obj {
 	case NULL:
@@ -267,10 +277,12 @@ func isTruthy(obj object.Object) bool {
 	}
 }
 
+// create an error
 func newError(format string, types ...interface{}) *object.Error {
 	return &object.Error{Message: fmt.Sprintf(format, types...)}
 }
 
+// check if object created is error
 func isError(obj object.Object) bool {
 	if obj != nil {
 		return obj.Type() == object.ERROR_OBJ
@@ -278,6 +290,7 @@ func isError(obj object.Object) bool {
 	return false
 }
 
+// evaluate a set of expressions
 func evalExpressions(
 	exps []ast.Expression,
 	env *object.Environment,
@@ -306,6 +319,7 @@ func applyFunction(fn object.Object, args []object.Object) object.Object {
 	return unwrapReturnValue(evaluated)
 }
 
+// create function in a different enviroment
 func extendFunctionEnv(
 	fn *object.Function,
 	args []object.Object,

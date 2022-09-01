@@ -4,7 +4,7 @@ This is my own esoteric programming language made for fun as well to practice mo
 
 **Disclaimer** Currently in development
 
-![video](https://cdn.discordapp.com/attachments/950199661447217202/1010352589554057316/videoplayback.mp4)
+![videoexplanation](https://youtu.be/GHxFr_oDSTI)
 
 ### Hello world
 

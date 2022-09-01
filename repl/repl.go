@@ -11,7 +11,7 @@ import (
 	"github.com/carepollo/sexlang/parser"
 )
 
-const PROMPT = ">> "
+const PROMPT = "--> "
 
 // start the interpreter in interactive mode (read, eval, print, loop), basically console mode
 func Start(in io.Reader, out io.Writer) {

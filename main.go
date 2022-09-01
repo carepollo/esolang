@@ -15,6 +15,6 @@ func main() {
 	}
 
 	fmt.Println("Initializing SEEEXXXXX programming language, user: ", user.Username)
-	fmt.Println("You may now start writting commands")
+	fmt.Println("You may now start writting")
 	repl.Start(os.Stdin, os.Stdout)
 }
