@@ -2,21 +2,16 @@ package token
 
 type TokenType string
 
-type Token struct {
-	Type    TokenType
-	Literal string
-}
-
 const (
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
 
-	//Identifiers and literals
-	IDENT  = "IDENT"
-	INT    = "INT"
-	STRING = "STRING"
+	// Identifiers + literals
+	IDENT  = "IDENT"  // add, foobar, x, y, ...
+	INT    = "INT"    // 1343456
+	STRING = "STRING" // "foobar"
 
-	//Operators
+	// Operators
 	ASSIGN   = "="
 	PLUS     = "+"
 	MINUS    = "-"
@@ -30,7 +25,7 @@ const (
 	EQ     = "=="
 	NOT_EQ = "!="
 
-	//Delimiters
+	// Delimiters
 	COMMA     = ","
 	SEMICOLON = ";"
 	COLON     = ":"
@@ -42,7 +37,7 @@ const (
 	LBRACKET = "["
 	RBRACKET = "]"
 
-	//Keywords
+	// Keywords
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
 	TRUE     = "TRUE"
@@ -51,6 +46,11 @@ const (
 	ELSE     = "ELSE"
 	RETURN   = "RETURN"
 )
+
+type Token struct {
+	Type    TokenType
+	Literal string
+}
 
 var keywords = map[string]TokenType{
 	"fn":     FUNCTION,

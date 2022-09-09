@@ -4,7 +4,8 @@ This is my own esoteric programming language made for fun as well to practice mo
 
 **Disclaimer** Currently in development
 
-![videoexplanation](https://youtu.be/GHxFr_oDSTI)
+![cover](./docs/cover.jpg)
+To know more information about this, you can check [here](https://youtu.be/GHxFr_oDSTI).
 
 #### Features
 The language currently supports
@@ -19,16 +20,16 @@ The language currently supports
 #### Installation
 
 Prerequisites:
-- Having GO version 1.18 already installed
+- Having GO version 1.19 already installed
 - Having git already installed.
 
 Run the following commands
-`git clone https://github.com/carepollo/sexlang.git`
-`cd sexlang`
-`go build`
+- `git clone https://github.com/carepollo/sexlang.git`
+- `cd sexlang`
+- `go build`
 This step depends on your OS
 On **Linux** or **MacOS** should be 
-`./sexlang`
+- `./sexlang`
 On **Windows** maybe is going through folder and open the .exe
 
 ##### Hello world
@@ -36,17 +37,16 @@ On **Windows** maybe is going through folder and open the .exe
 horny(message);
 ```
 
-##### Declare a variable
+##### Variables
 ```
 sex message = "Hello World!";
 ```
 
-##### Declare and manipulate an array
-
-##### Declare a hash
-
-
-#### To-Do
-
-- Finish some bugs with the support of _hash_ data structure
-- Replace the current keywords and 
+##### Arrays
+```
+sex array = [1,2,3];
+```
+##### HashMaps
+```
+sex hashmap = {"a":1, "b":2};
+```
