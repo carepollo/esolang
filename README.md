@@ -4,15 +4,17 @@ This is my own esoteric programming language made for fun as well to practice mo
 
 **Disclaimer** Currently in development
 
-![cover](./docs/cover.jpg)
+![cover](./docs/cover.jpeg)
+
 To know more information about this, you can check [here](https://youtu.be/GHxFr_oDSTI).
 
 #### Features
 The language currently supports
-- _string_ data structure
-- _int_ data structure
-- _functions_
-- _array_ data structure and method to pop, push and get lenght
+- _string_ data type
+- _int_ data type
+- _functions_ data type (including high order functions)
+- _array_ data structure and method to pop, push and get length
+- _hashmap_ data structure
 
 
 ### How to use
@@ -27,10 +29,8 @@ Run the following commands
 - `git clone https://github.com/carepollo/sexlang.git`
 - `cd sexlang`
 - `go build`
-This step depends on your OS
-On **Linux** or **MacOS** should be 
-- `./sexlang`
-On **Windows** maybe is going through folder and open the .exe
+- This step depends on your OS. On **Linux** or **MacOS** should be: `./sexlang`
+- On **Windows** maybe is going through folder and open the .exe
 
 ##### Hello world
 ```
@@ -45,8 +45,13 @@ sex message = "Hello World!";
 ##### Arrays
 ```
 sex array = [1,2,3];
+array[0] = 2;
+array.push(1);
+array.pop();
+len(array);
 ```
 ##### HashMaps
 ```
 sex hashmap = {"a":1, "b":2};
+hashmap["a"] = 2;
 ```
