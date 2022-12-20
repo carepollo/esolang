@@ -1,8 +1,7 @@
 package compiler
 
 import (
-	"go/ast"
-
+	"github.com/carepollo/sexlang/ast"
 	"github.com/carepollo/sexlang/code"
 	"github.com/carepollo/sexlang/object"
 )
@@ -24,7 +23,7 @@ func New() *Compiler {
 	}
 }
 
-func (c *Compiler) Compile(node *ast.Node) error {
+func (c *Compiler) Compile(node ast.Node) error {
 	return nil
 }
 
