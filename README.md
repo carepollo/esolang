@@ -1,10 +1,6 @@
-# (SEXXX!)lang
+# ESOlang
 
-This is my own esoteric programming language made for fun as well to practice more the GO programming language. This project started as a joke from the memes coming from the online community of shitpost.
-
-![cover](./docs/cover.jpeg)
-
-To know more information about this, you can check [here](https://youtu.be/GHxFr_oDSTI).
+This is a programming language made for fun as well to practice more the GO programming language. I call it Esoteric programming language but it actually **is not**, is pretty much like functional javascript with support for first class functions. Currectly there is no variables, only constants.
 
 ### Features
 The language currently supports
@@ -30,17 +26,17 @@ Run the following commands
 
 ##### Hello world
 ```
-horny(message);
+print("Hello World!");
 ```
 
 ##### Variables
 ```
-sex message = "Hello World!";
+let message = "Hello World!";
 ```
 
 ##### Arrays
 ```
-sex array = [1,2,3];
+let array = [1, 2, 3];
 array[0] = 2;
 array.push(1);
 array.pop();
@@ -48,6 +44,13 @@ len(array);
 ```
 ##### HashMaps
 ```
-sex hashmap = {"a":1, "b":2};
+let hashmap = {"a": 1, "b": 2};
 hashmap["a"] = 2;
 ```
+#### Functions
+```
+let myfunc = fn(a, b){ a + b }
+let afunc = fn(){ return myfunc }
+afunc()()
+```
+supports implicit and explicit return
