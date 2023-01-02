@@ -26,12 +26,13 @@ Run the following commands
 
 ##### Hello world
 ```
-print("Hello World!");
+puts("Hello World!");
 ```
 
 ##### Variables
 ```
 let message = "Hello World!";
+let number = 1;
 ```
 
 ##### Arrays
@@ -53,4 +54,4 @@ let myfunc = fn(a, b){ a + b }
 let afunc = fn(){ return myfunc }
 afunc()()
 ```
-supports implicit and explicit return
+Supports implicit and explicit return
