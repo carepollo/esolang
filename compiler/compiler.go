@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/carepollo/sexlang/ast"
-	"github.com/carepollo/sexlang/code"
-	"github.com/carepollo/sexlang/object"
+	"github.com/carepollo/esolang/ast"
+	"github.com/carepollo/esolang/code"
+	"github.com/carepollo/esolang/object"
 )
 
 type Compiler struct {

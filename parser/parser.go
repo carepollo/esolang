@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/carepollo/sexlang/ast"
-	"github.com/carepollo/sexlang/lexer"
-	"github.com/carepollo/sexlang/token"
+	"github.com/carepollo/esolang/ast"
+	"github.com/carepollo/esolang/lexer"
+	"github.com/carepollo/esolang/token"
 )
 
 const (

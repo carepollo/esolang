@@ -3,9 +3,9 @@ package vm
 import (
 	"fmt"
 
-	"github.com/carepollo/sexlang/code"
-	"github.com/carepollo/sexlang/compiler"
-	"github.com/carepollo/sexlang/object"
+	"github.com/carepollo/esolang/code"
+	"github.com/carepollo/esolang/compiler"
+	"github.com/carepollo/esolang/object"
 )
 
 const StackSize = 2048

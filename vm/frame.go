@@ -1,8 +1,8 @@
 package vm
 
 import (
-	"github.com/carepollo/sexlang/code"
-	"github.com/carepollo/sexlang/object"
+	"github.com/carepollo/esolang/code"
+	"github.com/carepollo/esolang/object"
 )
 
 type Frame struct {

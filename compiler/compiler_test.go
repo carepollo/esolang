@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/carepollo/sexlang/ast"
-	"github.com/carepollo/sexlang/code"
-	"github.com/carepollo/sexlang/lexer"
-	"github.com/carepollo/sexlang/object"
-	"github.com/carepollo/sexlang/parser"
+	"github.com/carepollo/esolang/ast"
+	"github.com/carepollo/esolang/code"
+	"github.com/carepollo/esolang/lexer"
+	"github.com/carepollo/esolang/object"
+	"github.com/carepollo/esolang/parser"
 )
 
 type compilerTestCase struct {

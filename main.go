@@ -5,7 +5,7 @@ import (
 	"os"
 	"os/user"
 
-	"github.com/carepollo/sexlang/repl"
+	"github.com/carepollo/esolang/repl"
 )
 
 func main() {

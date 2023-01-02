@@ -1,5 +1,4 @@
 # ESOlang
-
 This is a programming language made for fun as well to practice more the GO programming language. I call it Esoteric programming language but it actually **is not**, is pretty much like functional javascript with support for first class functions. Currectly there is no variables, only constants.
 
 ### Features
@@ -25,7 +24,6 @@ Run the following commands
 - On **Windows** maybe is going through folder and open the .exe
 
 ### How to use
-
 ##### Hello world
 ```js
 puts("Hello World!");
@@ -71,5 +69,14 @@ if (false) {
 
 
 ### Sidenote
-
 In case you wonder why is called 'esolang' to begin with, is because it all started from an idea that was discard afterwards, it was merely shitpost so it not worth mentioning.
+
+### Benchmark
+You can make a simple comparison between the interpreter and compiler of this language running the following commands.
+```bash
+go build -o fibonacci ./benchmark
+./fibonacci -engine=eval && ./fibonacci -engine=vm
+```
+
+Here is the output on my Machine (the bottom is the compiled one)
+![benchmark](docs/comparison.png)

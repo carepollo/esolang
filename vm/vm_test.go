@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/carepollo/sexlang/ast"
-	"github.com/carepollo/sexlang/compiler"
-	"github.com/carepollo/sexlang/lexer"
-	"github.com/carepollo/sexlang/object"
-	"github.com/carepollo/sexlang/parser"
+	"github.com/carepollo/esolang/ast"
+	"github.com/carepollo/esolang/compiler"
+	"github.com/carepollo/esolang/lexer"
+	"github.com/carepollo/esolang/object"
+	"github.com/carepollo/esolang/parser"
 )
 
 type vmTestCase struct {
@@ -468,7 +468,7 @@ func TestClosures(t *testing.T) {
 		{
 			input: `
 			let newAdder = fn(a, b) {
-			fn(c) { a + b + c };
+				fn(c) { a + b + c };
 			};
 			let adder = newAdder(1, 2);
 			adder(8);
@@ -478,8 +478,8 @@ func TestClosures(t *testing.T) {
 		{
 			input: `
 			let newAdder = fn(a, b) {
-			let c = a + b;
-			fn(d) { c + d };
+				let c = a + b;
+				fn(d) { c + d };
 			};
 			let adder = newAdder(1, 2);
 			adder(8);
@@ -489,11 +489,11 @@ func TestClosures(t *testing.T) {
 		{
 			input: `
 			let newAdderOuter = fn(a, b) {
-			let c = a + b;
-			fn(d) {
-			let e = d + c;
-			fn(f) { e + f; };
-			};
+				let c = a + b;
+				fn(d) {
+					let e = d + c;
+					fn(f) { e + f; };
+				};
 			};
 			let newAdderInner = newAdderOuter(1, 2)
 			let adder = newAdderInner(3);
@@ -623,15 +623,15 @@ func TestRecursiveFibonacci(t *testing.T) {
 		{
 			input: `
 		let fibonacci = fn(x) {
-		if (x == 0) {
-		return 0;
-		} else {
-		if (x == 1) {
-		return 1;
-		} else {
-		fibonacci(x - 1) + fibonacci(x - 2);
-		}
-		}
+			if (x == 0) {
+				return 0;
+			} else {
+				if (x == 1) {
+					return 1;
+				} else {
+					fibonacci(x - 1) + fibonacci(x - 2);
+				}
+			}
 		};
 		fibonacci(15);
 		`,

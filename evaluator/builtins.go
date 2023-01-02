@@ -1,7 +1,7 @@
 package evaluator
 
 import (
-	"github.com/carepollo/sexlang/object"
+	"github.com/carepollo/esolang/object"
 )
 
 var builtins = map[string]*object.Builtin{

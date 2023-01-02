@@ -3,9 +3,9 @@ package evaluator
 import (
 	"testing"
 
-	"github.com/carepollo/sexlang/lexer"
-	"github.com/carepollo/sexlang/object"
-	"github.com/carepollo/sexlang/parser"
+	"github.com/carepollo/esolang/lexer"
+	"github.com/carepollo/esolang/object"
+	"github.com/carepollo/esolang/parser"
 )
 
 func TestEvalIntegerExpression(t *testing.T) {

@@ -5,26 +5,26 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/carepollo/sexlang/compiler"
-	"github.com/carepollo/sexlang/evaluator"
-	"github.com/carepollo/sexlang/lexer"
-	"github.com/carepollo/sexlang/object"
-	"github.com/carepollo/sexlang/parser"
-	"github.com/carepollo/sexlang/vm"
+	"github.com/carepollo/esolang/compiler"
+	"github.com/carepollo/esolang/evaluator"
+	"github.com/carepollo/esolang/lexer"
+	"github.com/carepollo/esolang/object"
+	"github.com/carepollo/esolang/parser"
+	"github.com/carepollo/esolang/vm"
 )
 
 var engine = flag.String("engine", "vm", "use 'vm' or 'eval'")
 var input = `
 let fibonacci = fn(x) {
-if (x == 0) {
-0
-} else {
-if (x == 1) {
-return 1;
-} else {
-fibonacci(x - 1) + fibonacci(x - 2);
-}
-}
+	if (x == 0) {
+		0
+	} else {
+		if (x == 1) {
+			return 1;
+		} else {
+			fibonacci(x - 1) + fibonacci(x - 2);
+		}
+	}
 };
 fibonacci(35);
 `

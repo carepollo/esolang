@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/carepollo/sexlang/token"
+	"github.com/carepollo/esolang/token"
 )
 
 // The base Node interface

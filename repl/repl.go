@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/carepollo/sexlang/compiler"
-	"github.com/carepollo/sexlang/lexer"
-	"github.com/carepollo/sexlang/object"
-	"github.com/carepollo/sexlang/parser"
-	"github.com/carepollo/sexlang/vm"
+	"github.com/carepollo/esolang/compiler"
+	"github.com/carepollo/esolang/lexer"
+	"github.com/carepollo/esolang/object"
+	"github.com/carepollo/esolang/parser"
+	"github.com/carepollo/esolang/vm"
 )
 
 const PROMPT = "--> "

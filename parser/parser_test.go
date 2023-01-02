@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/carepollo/sexlang/ast"
-	"github.com/carepollo/sexlang/lexer"
+	"github.com/carepollo/esolang/ast"
+	"github.com/carepollo/esolang/lexer"
 )
 
 func TestLetStatement(t *testing.T) {

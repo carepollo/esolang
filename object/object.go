@@ -6,8 +6,8 @@ import (
 	"hash/fnv"
 	"strings"
 
-	"github.com/carepollo/sexlang/ast"
-	"github.com/carepollo/sexlang/code"
+	"github.com/carepollo/esolang/ast"
+	"github.com/carepollo/esolang/code"
 )
 
 type BuiltinFunction func(args ...Object) Object
